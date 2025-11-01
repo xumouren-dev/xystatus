@@ -26,5 +26,5 @@ pnpm dev
 
 ```bash
 docker build -t xystatus .
-docker run -p 3000:3000 -e ADMIN_PASSWORD=your-password -e MONITOR_INTERVAL=60 xystatus
+docker run -d -p 3000:3000 -e ADMIN_PASSWORD=your-password -e MONITOR_INTERVAL=60 xystatus
 ```
