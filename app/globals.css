@@ -1,0 +1,164 @@
+/* === TAILWIND CSS IMPORTS === */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* === CUSTOM VARIANT DEFINITIONS === */
+@custom-variant dark (&:is(.dark *));
+
+/* === CSS CUSTOM PROPERTIES (DESIGN TOKENS) === */
+
+:root {
+  /* === LIGHT MODE COLOR PALETTE === */
+
+  /* Base colors */
+  --background: #ffffff;
+  --foreground: #000000;
+
+  /* Card and surface colors */
+  --card: #f8f9fa;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+
+  /* Brand colors - green theme for cyberpunk aesthetic */
+  --primary: #059669;
+  --primary-foreground: #ffffff;
+  --secondary: #10b981;
+  --secondary-foreground: #ffffff;
+
+  /* Neutral colors */
+  --muted: #e5e7eb;
+  --muted-foreground: #6b7280;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+
+  /* Status colors */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  /* UI element colors */
+  --border: #e5e7eb;
+  --input: #f8f9fa;
+  --ring: #059669;
+
+  /* Chart colors - green theme variations */
+  --chart-1: #059669;
+  --chart-2: #10b981;
+  --chart-3: #00ff41;
+  --chart-4: #0891b2;
+  --chart-5: #f59e0b;
+
+  /* Border radius */
+  --radius: 0.25rem;
+}
+
+.dark {
+  /* === DARK MODE COLOR PALETTE === */
+  /* Cyberpunk hacker aesthetic with green matrix theme */
+
+  /* Base colors - deep black with matrix green */
+  --background: #0a0a0a;
+  --foreground: #00ff41;
+
+  /* Card and surface colors */
+  --card: #111111;
+  --card-foreground: #00ff41;
+  --popover: #0a0a0a;
+  --popover-foreground: #00ff41;
+
+  /* Brand colors */
+  --primary: #059669;
+  --primary-foreground: #ffffff;
+  --secondary: #10b981;
+  --secondary-foreground: #ffffff;
+
+  /* Neutral colors - dark theme */
+  --muted: #333333;
+  --muted-foreground: #888888;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+
+  /* Status colors */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  /* UI element colors - dark theme */
+  --border: #333333;
+  --input: #111111;
+  --ring: #059669;
+
+  /* Chart colors - same as light mode */
+  --chart-1: #059669;
+  --chart-2: #10b981;
+  --chart-3: #00ff41;
+  --chart-4: #0891b2;
+  --chart-5: #f59e0b;
+}
+
+/* === TAILWIND CSS V4 THEME CONFIGURATION === */
+@theme inline {
+  /* Font family variables */
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Color token mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Chart color mappings */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Border radius scale */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* === BASE LAYER STYLES === */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+}
+
+/* === CUSTOM ANIMATIONS === */
+
+/* Blink Animation - terminal cursor effect */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
