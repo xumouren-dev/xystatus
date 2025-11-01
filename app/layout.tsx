@@ -13,8 +13,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "XyStatus - 服务监控系统",
-  description: "高性能轻量的网站服务监控系统，终端风格界面",
+  title: "xystatus",
+  description: "高性能轻量的网站服务监控系统",
 }
 
 // 在服务端启动监控调度器
